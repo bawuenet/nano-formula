@@ -1,8 +1,11 @@
+{% import_yaml "nano/defaults.yaml" as defaults %}
+{% import_yaml "nano/osfamilymap.yaml" as os_familymap %}
+
 {% set nano = salt['grains.filter_by']({
-    'Debian': {
-        'pkg': 'nano',
-    },
-    'RedHat': {
-        'pkg': 'nano',
-    },
-}, merge=salt['pillar.get']('nano:lookup')) %}
+    defaults,
+    merge=salt['grains.filter_by'](
+        os_familymap,
+        merge=salt['pillar.get']('nano:lookup', {}),
+    ),
+    base='nano')
+%}

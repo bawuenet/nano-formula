@@ -22,3 +22,8 @@ Ensures that nano is installed
 ---------------
 
 Ensures that nano is purged
+
+``nano.syntax_highlight``
+---------------
+
+Install syntax highlighting rules

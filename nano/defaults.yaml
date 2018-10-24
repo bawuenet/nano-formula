@@ -1,0 +1,4 @@
+nano:
+  pkg: nano
+  nanorc: /etc/nanorc
+  highlight_dir: /usr/share/nano-syntax-highlighting/
